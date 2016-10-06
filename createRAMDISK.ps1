@@ -11,7 +11,7 @@ param (
 )
 
 
-New-iscsivirtualdisk -path ramdisk:RAMDISK1.vhdx -size ($size)GB
+New-iscsivirtualdisk -path ramdisk:RAMDISK1.vhdx -size ([int]$size * 1GB)
 New-IscsiServerTarget Target1 -InitiatorId IPAddress:$ip
 Add-IscsiVirtualDiskTargetMapping -TargetName Target1 -Path ramdisk:RAMDISK1.vhdx -Lun 1
 Start-Service msiscsi
