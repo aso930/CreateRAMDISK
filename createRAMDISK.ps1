@@ -7,7 +7,7 @@
 
 param (
     [Parameter(Mandatory=$True)][string]$ip,
-    [Parameter(Mandatory=$True)][number]$size
+    [Parameter(Mandatory=$True)][int]$size
 )
 
 
